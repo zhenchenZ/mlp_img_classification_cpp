@@ -1,2 +1,7 @@
 data/
 models/
+build/
+.vscode/
+
+*.pdf
+*.ipynb

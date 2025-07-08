@@ -9,6 +9,8 @@
 #include <mutex>   // IF4
 #include <csignal> // IF4
 
+#include <random>
+
 #include "MLP_Network_SGD.h"
 #include "MLP_Layer_SGD.h"
 #include "IRM2D.h"
@@ -152,7 +154,9 @@ int main(int argc, char *argv[])
         {
         tic();
         std::srand ( unsigned ( std::time(0) ) );
-        std::random_shuffle(indexes.begin(), indexes.end());
+        std::random_device rd;
+        std::mt19937 g(rd());
+        std::shuffle(indexes.begin(), indexes.end(), g);
         ProgressBar('R');
 
         float sumError=0;

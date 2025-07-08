@@ -15,7 +15,7 @@ using namespace std;
 // LINUX / MAC
 //    const string SRC_PATH = "/home/tgrenier/Documents/Clanu21/cpp";
 // WINDOWS
-    const string SRC_PATH = "D:/Documents/_NextCloud/documents/Insa-GE/2021/Clanu/cpp";
+    const string SRC_PATH = "E:/Github/mlp_img_classification_cpp";
 
 
 int main(int argc, char *argv[])
@@ -31,6 +31,15 @@ int main(int argc, char *argv[])
 #else
     cout << " fast-math is strangely not activated " << endl;
 #endif
+
+// Print all the arguments
+    cout << "Arguments : " << endl;
+    for(int i = 0; i < argc; i++)
+        {
+        cout << "Arg" << i << " : "<< argv[i] << endl;
+        }
+    cout << endl;
+
 
     if( argc < 2)
         {

@@ -54,7 +54,9 @@ int ECHO::ReadPath(std::string pathname)
 
 // Randomize order
 //     std::srand ( unsigned ( std::time(0) ) );  // ne pas utiliser pour garantir le meme ordre des données!
-    std::random_shuffle ( Dataset.begin(), Dataset.end() );
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle ( Dataset.begin(), Dataset.end(), g );
 
     return image_count;
 }
